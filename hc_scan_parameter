@@ -1,0 +1,64 @@
+## Maximum number of days a password may be used(password expiry days)
+PASS_MAX_DAYS	90 
+
+##### Password settings in file /etc/login.defs #####
+
+## Minimum number of days allowed between password changes
+PASS_MIN_DAYS	1    
+
+  	
+
+## Minimum acceptable password length
+PASS_MIN_LENGTH	8
+
+##Shared ID Vaulted in UAT or any other tool, please mention "Yes or No"
+SHARED_ID_VAULTED	yes
+ 	
+
+## Log rotate value in weeks or months to set in /etc/logrotate.conf. Below settings is for log retention for 90 days or more.
+LOG_ROTATE_WEEK 	13
+LOG_ROTATE_MONTH 	3
+
+## Umask value to set in /etc/login.defs;/etc/profile.d/IBMsinit.sh;/etc/profile.d/IBMsinit.csh
+UMASK_VAL	077	
+
+
+## Umask value to set in /etc/bashrc;/etc/skel/.cshrc;/etc/skel/.login;/etc/skel/.profile;/etc/skel/.bashrc
+## Umask value to set in /etc/skel/.bash_profile;/etc/skel/.bash_login;/etc/skel/.tcshrc
+UMASK_BASHRC_VAL	077
+
+####### User's Password complexity values to set in /etc/pam.d/pasword-auth and /etc/pam.d/system-auth #######
+
+## Minimum number of digits should be added in the password. Here it is set as 1 numeric value to set in password
+DIGIT		-1 
+
+## Minimum number of upper case characters should be added in the password. Here it is set as 1 upper case character	
+UPPER_CASE	0
+
+## Minimum number of lower case characters should be added in the password. Here it is set as 1 lower case character	
+LOWER_CASE	-1 
+
+## Minimum number of special characters should be added in the password. Here it is set as 0 to have no special character	
+OTHER_CHAR	0
+
+## To Prevent reuse of last eight passwords value. Here it is 7 previous password + user current password, total 8	
+PAM_REMEMBER	7   	
+
+## System parameter values in /etc/ssh/sshd_config. These are default values except PERMITROOTLOGIN, please change if any change in agreed values in SSH techspec.
+PERMITROOTLOGIN		no
+PERMITUSERENVIRONMENT	no
+TCPKEEPALIVE		yes
+MAXSTARTUPS		100
+MAXAUTHTRIES		5
+LOGINGRACETIME		120
+KEYREGENERATIONINTERVAL	3600
+PERMITEMPTYPASSWORDS	no
+LOGLEVEL		INFO
+GATEWAYPORTS		no
+STRICTMODES		yes
+PRINTMOTD		yes
+
+
+## Local user ID's to set as never expire separated by comma and should be part of exception template
+NON_EXPIRY_ID: user1,user2
+
